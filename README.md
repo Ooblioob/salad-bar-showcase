@@ -14,7 +14,7 @@ A simple website built using a full suite of open source technologies
 ##Notable tools:
 * [Puppet](http://puppetlabs.com/) - provision applications and configurations
 * [Django](http://www.djangoproject.com/) - Python application framwork
-* [Jenkins](http://jenkins-ci.org/) - Continuous Integration Server
+* [Jenkins](http://jenkins-ci.org/) - Continuous integration server
 
 ##Other contributing tools:
 * [Vagrant](http://www.vagrantup.com/) - create virtualbox servers

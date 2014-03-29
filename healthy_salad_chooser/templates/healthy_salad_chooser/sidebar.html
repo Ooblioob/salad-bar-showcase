@@ -1,0 +1,12 @@
+{% load active %}
+{% url 'index' as index %}
+{% url 'about' as about %}
+
+<div class="col-lg-2 sidebar">
+  <ul class="nav nav-sidebar">
+    <li class="{% active request index %}"><a href="{{ index }}">Overview</a></li>
+    <li class="{% active request about %}"><a href="{{ about }}">About</a></li>
+    <li><a href="/jenkins/" target="_blank">Jenkins</a></li>
+    </li>
+  </ul>
+</div>

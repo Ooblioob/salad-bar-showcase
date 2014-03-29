@@ -1,53 +1,56 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-<head>
- 
-<title>{% block title %}Site Title{% endblock %}</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-<link rel="stylesheet" type="text/css" href="/static/css/nav.css">
-{% block css_include %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
 
-{% block js_include %}{% endblock %} 
- 
-</head>
-<body>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ STATIC_URL }}/css/bootstrap.min.css" rel="stylesheet">
 
-  <div id="container">
+    <!-- Custom styles for this template -->
+    <link href="{{ STATIC_URL }}/css/dashboard.css" rel="stylesheet">
 
-  <div id="spacer"></div>
+    {% block css_include %}{% endblock %}
 
-  <div id="header">
-    <nav>
-      <div class="inner">
-      <ul>
-        <li {% if is_front %}class="active" {% endif %}>
-            <a href="/">Home</a>
-        </li>
-        <li {% if is_about %}class="active"{% endif %}>
-            <a href="/about/">About</a>
-        </li>
-        <li><a href="#">Tools</a>
-        </li>
-      </ul>
+    {% block js_include %}{% endblock %} 
 
-      <div class="search">
-        <form method="get" action="#" id="search-form">
-          <label for="search">Search salad app</label>
-          <input type="text" id="search" name="term" tabindex="3">
-          <input type="button" id="search-submit-btn" value="Search" tabindex="4">
-        </form>
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    {% include "healthy_salad_chooser/navbar.html" %}
+
+    <div class="container-fluid">
+      <div class="row">
+        {% include "healthy_salad_chooser/sidebar.html" %}
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+         {% block content %} {% endblock %}
+        </div>
+        {% include "healthy_salad_chooser/footer.html" %}
       </div>
-      </div>
-    </nav>
-  </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL }}js/docs.min.js"></script>
+  </body>
 
- 
-  <div id="content">
-    {% block content %}{% endblock %}
-  </div>
-
-  {% include "healthy_salad_chooser/footer.html" %}
-  </div>
-</body>
 </html>

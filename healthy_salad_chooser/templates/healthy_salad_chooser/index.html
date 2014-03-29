@@ -27,29 +27,45 @@
 {% endblock %}
 
 {% block content %} 
+
   <h1>Pick your toppings!</h1>
 
-  <div class="toppingSelector" >
-    <div class="toppingsList" id="toppingsChoices">
-    {% if ingredient_list %}
-       {% for ingredient in ingredient_list %}
-         {% comment %}<div class="topping"><a href="/saladbar/{{ ingredient.id }}/">{{ ingredient.name }}</a></div> {% endcomment %}
-         <div class="topping" id="{{ ingredient.id }}">{{ ingredient.name }}</div>
-       {% endfor %}
-    {% else %}
-      <p>No Ingredients, please add some in the admin console!</p>
-    {% endif %}
+  <div class="row placeholders">
+    <div class="col-sm-4">
+      <div class="col-sm-6 placeholder">
+        <div class="panel panel-primary" id="toppingsChoices">
+          <div class="panel-heading">Available Toppings</div>
+          <div class="panel-body">
+        {% if ingredient_list %}
+           {% for ingredient in ingredient_list %}
+             {% comment %}<div class="topping"><a href="/saladbar/{{ ingredient.id }}/">{{ ingredient.name }}</a></div> {% endcomment %}
+             <button class="topping btn btn-default btn-block" id="{{ ingredient.id }}">{{ ingredient.name }}</button>
+           {% endfor %}
+         </div>
+        </div>
+      {% else %}
+        <p>No Ingredients, please add some in the admin console!</p>
+      {% endif %}
+      </div>
+    
+      <div class="col-sm-6 placeholder"> 
+        <div class="panel panel-default" id="toppingsSelected">
+          <div class="panel-heading">Selected Toppings</div>
+          <div class="panel-body"></div>
+      </div>
     </div>
- 
-    <div class="toppingsList" id="toppingsSelected"> </div>
   </div>
 
-  <div class="ingredientInfo"> </div>
+  <div class="col-sm-8">
+    <div class="col-sm-2 placeholder" id="ingredientInfo"> </div>
 
-  <div id="charts">
-    <div id="cost_chart" style="display: inline-block; margin-right: 20px"></div>
-    <div id="calorie_chart" style="display: inline-block;"></div>
+    <div id="charts" class="col-sm-10 placeholder">
+      <div id="cost_chart" style="display: inline-block; margin-right: 20px"></div>
+      <div id="calorie_chart" style="display: inline-block;"></div>
+    </div>
   </div>
 
-  <h3>Total toppings selected: <span id="counter"></span></h3> 
+  <div class="col-sm-12">
+    <h3>Total toppings selected: <span id="counter"></span></h3> 
+  </div>
 {% endblock %}

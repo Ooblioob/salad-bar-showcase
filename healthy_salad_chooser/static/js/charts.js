@@ -23,21 +23,23 @@ function initializeCharts(){
   ]);
 
   options_cost = {
-    width: 100,
+    width: 200,
+    height: 400,
     legend: {position: "none"},
-    bar: {groupWidth: "25%"},
     vAxis: {minValue: 0.00, maxValue: 10.00, format: "$##.00"},
-    chartArea: {left: "50"},
-    animation: {duration: 500, easing: 'out'}
+    animation: {duration: 500, easing: 'out'},
+    fontSize: 18,
+    chartArea: {left:60}
   };
 
   options_calories = {
-    width: 100,
+    width: 200,
+    height: 400,
     legend: {position: "none"},
-    bar: {groupWidth: "25%"},
     vAxis: {minValue: 0.00, maxValue: 1000},
-    chartArea: {left: "50"},
     animation: {duration: 500, easing: 'out'},
+    fontSize: 18,
+    chartArea: {left:60}
   };
 
   
