@@ -88,12 +88,6 @@ class salad_app {
     proxy  => 'http://jenkins',
   }
 
-  file { "/etc/nginx/conf.d/default.conf":
-    ensure => absent,
-    require => Package['nginx'],
-    notify => Service['nginx'],
-  }
-
   class { 'jenkins':
     config_hash => {
       'JENKINS_PORT' => { 'value' => '8001' },
