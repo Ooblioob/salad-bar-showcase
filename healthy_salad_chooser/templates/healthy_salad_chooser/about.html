@@ -3,7 +3,7 @@
 {% block title %}About{% endblock %}
 
 {% block css_include %}
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+{{ block.super }}
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/github.css">
 {% endblock %}
 

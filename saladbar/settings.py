@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -71,6 +72,8 @@ USE_TZ = True
 FIXTURE_DIRS = (
     'saladbar/fixtures/',
 )
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # import local settings (db, static files, additional modules, etc)
 from saladbar.local_settings import *

@@ -1,4 +1,12 @@
 Django==1.6.2
+astroid==1.0.1
+coverage==3.7.1
+decorator==3.4.0
+-e git://github.com/joestump/django-ajax@42c5ad042c543ff2bf66e22b2774581d01cc1c89#egg=django_ajax-master
+django-crispy-forms==1.4.0
+django-jenkins==0.15.0
+gunicorn==18.0
+logilab-common==0.61.0
+pylint==1.1.0
+virtualenv==1.11.4
 wsgiref==0.1.2
-gunicorn
-virtualenv

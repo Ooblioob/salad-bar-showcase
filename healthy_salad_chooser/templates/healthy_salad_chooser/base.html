@@ -17,7 +17,9 @@
     <!-- Custom styles for this template -->
     <link href="{{ STATIC_URL }}/css/dashboard.css" rel="stylesheet">
 
-    {% block css_include %}{% endblock %}
+    {% block css_include %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+    {% endblock %}
 
     {% block js_include %}{% endblock %} 
 
@@ -34,6 +36,7 @@
   <body>
 
     {% include "healthy_salad_chooser/navbar.html" %}
+
 
     <div class="container-fluid">
       <div class="row">
