@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from healthy_salad_chooser.models import Ingredient
+from healthy_salad_chooser.models import Ingredient, Salad
 from django.views import generic
 from healthy_salad_chooser.forms import RegistrationForm, LoginForm
 from django.contrib.auth.models import User
@@ -66,6 +66,13 @@ class SignUpView(generic.CreateView,
 
 	#def get_success_url(self, request, user):
 	#	return reverse_lazy('index')
+
+class SaladListView(views.LoginRequiredMixin, generic.ListView):
+	model = Salad
+	template_name = 'healthy_salad_chooser/profile.html'
+
+	def get_queryset(self):
+		return self.request.user.salads.all()
 
 class ProfileView(generic.TemplateView):
 	model = User

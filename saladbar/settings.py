@@ -39,7 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms'
+    'crispy_forms',
+    'south',
+    'healthy_salad_chooser'
 )
 
 MIDDLEWARE_CLASSES = (
