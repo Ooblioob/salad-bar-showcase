@@ -1,13 +1,15 @@
 {% extends "healthy_salad_chooser/base.html" %}
 
- 
+{% load crispy_forms_tags %} 
+
 {% block title %}Login{% endblock %}
 
 {% block content %}
 
-<h3>Hey, a login page is coming...but for now, just register</h3>
+<h1>Login to the Healthy Salad Chooser</h1>
+{% crispy form %}
 
-<a href="{% url 'signup' %}">Sign Up Here</a>
+Not a member? <a href="{% url 'signup' %}">Sign Up Here</a>
 
 <br><br>
 {% endblock %}

@@ -37,11 +37,17 @@
 
     {% include "healthy_salad_chooser/navbar.html" %}
 
-
     <div class="container-fluid">
       <div class="row">
         {% include "healthy_salad_chooser/sidebar.html" %}
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+          {% if messages %}
+          <div class="messages">
+              {% for message in messages %}
+              <div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
+              {% endfor %}
+          </div>
+          {% endif %}
          {% block content %} {% endblock %}
         </div>
         {% include "healthy_salad_chooser/footer.html" %}

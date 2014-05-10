@@ -1,0 +1,16 @@
+{% extends "healthy_salad_chooser/base.html" %}
+ 
+{% block title %}Salad Selector{% endblock %}
+
+{% block css_include %}
+{{ block.super }}
+
+{% endblock %}
+
+{% block js_include %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1>Welcome {{ user.username }}</h1>
+{% endblock %}
